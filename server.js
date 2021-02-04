@@ -7,7 +7,7 @@ app.use("/static", express.static(__dirname + "/static"));
 app.set("view engine", "ejs")
 
 const mongoClient = require("mongodb").MongoClient;
-mongoClient.connect("mongodb://localhost:27017", {useUnifiedTopology: true}, { useNewUrlParser: true }, (error, client) => {
+mongoClient.connect("mongodb://localhost:27017", { useUnifiedTopology: true }, { useNewUrlParser: true }, (error, client) => {
     const blog = client.db("blog");
     console.log("DB Connected")
 
